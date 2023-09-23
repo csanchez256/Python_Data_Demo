@@ -47,7 +47,7 @@ cwd = os.getcwd()
 files = os.listdir(cwd)
 print("files in %r" % (cwd))
 
-
+# If you're running windows your path may look something like this
 #df = pandas.read_csv('C:\\Users\\css7c\\Desktop\\Python_Programs\\NM_data.csv')
 
 
