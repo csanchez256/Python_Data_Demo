@@ -1,7 +1,7 @@
 
 import numpy
 from scipy import stats
-from sklearn import datasets, linear_model
+#from sklearn import datasets, linear_model
 import pandas 
 import matplotlib.pyplot as plt
 import os
@@ -77,14 +77,12 @@ with open('C:\\Users\\css7c\\Desktop\\Python_Programs\\NM_data.csv', mode ='r') 
         print(lines)
 """
 
-filename = 'C:\\Users\\css7c\\Desktop\\Python_Programs\\NM_data.csv'
+filename = '/Users/css/Desktop/Python Programs/Data/NM_data.csv'
 df = dd.read_csv(filename, dtype='str')
 
 df.head(2)
 
 
-#blah blah blah
 
-#blah blah blah 2
 
 
