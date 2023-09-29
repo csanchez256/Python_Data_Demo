@@ -1,13 +1,15 @@
 
 import numpy
 from scipy import stats
-#from sklearn import datasets, linear_model
 import pandas 
 import matplotlib.pyplot as plt
 import os
 import time
-from dask import dataframe as dd
 import csv
+
+
+import dask.dataframe as dd
+from dask.diagnostics import ProgressBar
 
 # Put this on the top
 
@@ -20,11 +22,11 @@ x = numpy.mean(speed)
 print(x)
 
 y = numpy.median(speed)
-print(y)
+print("Median is ", y)
 
-z = stats.mode(speed)
+#z = stats.mode(speed)
 
-print(z)
+#print("Mode is ", z)
 
 a = numpy.std(speed)
 
@@ -32,7 +34,7 @@ print("standard deviation is", a)
 
 # Now for scatter plots
 
-z
+
 x = [5,7,8,7,2,17,2,9,4,11,12]
 y = [99,86,87,88,86,87,94,78,77,85,86]
 
@@ -51,38 +53,24 @@ print("files in %r" % (cwd))
 #df = pandas.read_csv('C:\\Users\\css7c\\Desktop\\Python_Programs\\NM_data.csv')
 
 
-#print(df.to_string())
-
 """
-# time taken to read data
-s_time_dask = time.time()
-dask_df = df1.read_csv('C:\\Users\\css7c\\Desktop\\Python_Programs\\data.csv')
-e_time_dask = time.time()
-print("Read with dask: ", (e_time_dask-s_time_dask), "seconds")
-
-# data
-dask_df.head(10)
-"""
-
-"""
-# opening the CSV file 
-with open('C:\\Users\\css7c\\Desktop\\Python_Programs\\NM_data.csv', mode ='r') as file:   
-    # reading the CSV file 
-    csvFile = csv.reader(file) 
-"""
-
-"""    
-  # displaying the contents of the CSV file 
-  for lines in csvFile: 
-        print(lines)
-"""
-
+#This is useful if you just want to visually see the table elements
+# But it can't infer data types
 filename = '/Users/css/Desktop/Python Programs/Data/NM_data.csv'
 df = dd.read_csv(filename, dtype='str')
 
-df.head(2)
+# Print the first 10 rows from the data
+x = df.head(10)
+
+# Print the last two rows from the data
+#print(df.tail(2))
+
+"""
+
+df = dd.read_csv('/Users/css/Desktop/Python Programs/Data/NM_data.csv')
 
 
 
-
+#Dask dataframes
+# https://pnavaro.github.io/big-data/16-DaskDataframes.html
 
