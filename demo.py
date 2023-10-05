@@ -16,7 +16,7 @@ from dask.diagnostics import ProgressBar
 """
 #This is useful if you just want to visually see the table elements
 # But it can't infer data types
-filename = '/Users/css/Desktop/Python Programs/Data/NM_data.csv'
+filename = '/Users/css/Desktop/Python Programs/Python_Data_Demo/Data/NM_data.csv'
 df = dd.read_csv(filename, dtype='str')
 
 # Print the first 10 rows from the data
