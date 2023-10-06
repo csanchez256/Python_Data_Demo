@@ -27,23 +27,10 @@ x = df.head(10)
 
 """
 
-df = dd.read_csv('/Users/css/Desktop/Python Programs/Data/NM_data.csv')
+filename = '/Users/css/Desktop/Python Programs/Python_Data_Demo/Data/NM_data.csv'
+df = dd.read_csv(filename, dtype='str')
 
-#https://www.coiled.io/blog/dask-read-csv-to-dataframe
-ddf = dd.read_csv('/Users/css/Desktop/Python Programs/Data/NM_data.csv', sample_rows=5000)
-print(ddf.dtypes)
+# Print the first 10 rows from the data
+x = df.head(10)
 
-
-
-#Dask dataframes
-# https://pnavaro.github.io/big-data/16-DaskDataframes.html
-
-
-# How to run a regression with Pandas:  https://saturncloud.io/blog/how-to-run-an-ols-regression-with-pandas-data-frame/
-data = pandas.read_csv('/Users/css/Desktop/Python Programs/Data/NM_data.csv', low_memory=False)
-y = data['hhwt']
-X = data[['perwt', 'hwsei']]
-X = sm.add_constant(X)
-
-model = sm.OLS(y, X).fit()
-#print(model.summary())
+print(x)
