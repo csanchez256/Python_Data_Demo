@@ -3,6 +3,17 @@ from scipy import stats #for mode and regression
 import matplotlib.pyplot as plot
 import dask.dataframe as dd #for reading in large file
 
+#########################
+# Function declarations #
+#########################
+
+def simpleregression(x):
+  return slope * x + intercept
+
+
+######################
+# 1) Basic statistics  
+######################
 
 age = [18,22,46,86,23,55,66,77,12,22,14,10]
 
@@ -19,20 +30,15 @@ print("The standard deviation is", s)
 #print("the mode is", mode)
 
 
-
 ########################
-# Simple scatter plot  #
+# 2) Simple scatter plot  
 ########################
 
 x = [5,7,8,7,2,17,2,9,4,11,12,9,6]
 y = [99,86,87,88,111,86,103,87,94,78,77,85,86]
 
 slope, intercept, r, p, std_err = stats.linregress(x, y)
-
-def myfunc(x):
-  return slope * x + intercept
-
-mymodel = list(map(myfunc, x))
+mymodel = list(map(simpleregression, x))
 
 plot.scatter(x, y)
 plot.plot(x, mymodel)
